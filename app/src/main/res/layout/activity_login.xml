@@ -35,9 +35,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/black"
             android:background="@color/white"
-            android:textSize="24sp" />
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            tools:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

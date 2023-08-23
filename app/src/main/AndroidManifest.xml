@@ -13,10 +13,13 @@
         android:theme="@style/Theme.QuizApplication"
         tools:targetApi="31">
         <activity
-            android:name=".kotlin.LoginActivity"
+            android:name=".kotlin.ScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".kotlin.QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kotlin.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".kotlin.MainActivity"

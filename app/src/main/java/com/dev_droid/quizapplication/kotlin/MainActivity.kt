@@ -7,6 +7,8 @@ import android.os.Handler
 import android.os.Looper
 import androidx.core.os.postDelayed
 import com.dev_droid.quizapplication.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +16,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         Handler(Looper.getMainLooper()).postDelayed(3000){
-            val intent= Intent(this,LoginActivity::class.java)
-            startActivity(intent)
+
+            if(FirebaseAuth.getInstance().currentUser!=null){
+                val intent= Intent(this,QuizActivity::class.java)
+                startActivity(intent)
+            }else {
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.putExtra("MODE","SIGNUP")
+                startActivity(intent)
+            }
         }
     }
 }
